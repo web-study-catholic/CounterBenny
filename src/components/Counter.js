@@ -1,6 +1,11 @@
 import React from "react";
+import styled from 'styled-components';
+import Button from './Button';
 
-function Counter({number, diff, onIncrease, onDecrease, onSetDiff}) {
+const AppBlock = styled.div`
+`;
+
+function Counter({number,onIncrease, onDecrease, onSetDiff}) {
     const onChange = e =>{
         onSetDiff(parseInt(e.tatget.value, 10)); //10진수
         //문자를 숫자로 변환
@@ -9,10 +14,10 @@ function Counter({number, diff, onIncrease, onDecrease, onSetDiff}) {
     return (
         <div>
             <h1>{number}</h1>
-            <div>
-                <button onClick={onIncrease}>+</button>
-                <button onClick={onDecrease}>-</button>
-            </div>
+            <AppBlock>
+                <Button onClick={onIncrease}>+</Button>
+                <Button onClick={onDecrease}>-</Button>
+            </AppBlock>
         </div>
     )
 }
